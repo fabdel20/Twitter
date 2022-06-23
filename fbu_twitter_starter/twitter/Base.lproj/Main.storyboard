@@ -237,7 +237,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="tweetBox" destination="Gnc-DW-5IT" id="ML7-ZH-5NT"/>
+                        <outlet property="tweetText" destination="Gnc-DW-5IT" id="FXN-eu-aPZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bI3-Fr-Iiv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
