@@ -118,21 +118,36 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="reply" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z20-vl-SwV">
-                                                    <rect key="frame" x="99" y="93" width="22" height="12"/>
+                                                    <rect key="frame" x="113" y="93" width="22" height="12"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
                                                     <color key="textColor" systemColor="secondaryLabelColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="retweet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FL3-Dq-RWs">
-                                                    <rect key="frame" x="138" y="93" width="34" height="12"/>
+                                                    <rect key="frame" x="165" y="93" width="34" height="12"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
                                                     <color key="textColor" systemColor="secondaryLabelColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="spR-Pf-mtz">
+                                                    <rect key="frame" x="148" y="93" width="15" height="13"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="retweet-icon"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPO-nN-BD8">
+                                                    <rect key="frame" x="220" y="93" width="10" height="11"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="favor-icon"/>
+                                                    <connections>
+                                                        <action selector="didTapFavorite:" destination="IWF-r9-yhI" eventType="touchUpInside" id="s6G-RS-4im"/>
+                                                    </connections>
+                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHc-Gh-6mX">
-                                                    <rect key="frame" x="189" y="93" width="20" height="12"/>
+                                                    <rect key="frame" x="241" y="93" width="23" height="12"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
                                                     <color key="textColor" systemColor="secondaryLabelColor"/>
@@ -143,10 +158,12 @@
                                         <connections>
                                             <outlet property="author" destination="30G-pk-Lx5" id="trS-tQ-uTE"/>
                                             <outlet property="date" destination="HNq-2S-lsP" id="Kct-jL-7Ut"/>
+                                            <outlet property="favButton" destination="uPO-nN-BD8" id="oLc-R8-I8z"/>
                                             <outlet property="likes" destination="MHc-Gh-6mX" id="QPE-Ji-zoK"/>
                                             <outlet property="profilePic" destination="ILP-If-MJw" id="oMs-jR-71j"/>
                                             <outlet property="reply" destination="z20-vl-SwV" id="tZG-1j-3ac"/>
                                             <outlet property="retweet" destination="FL3-Dq-RWs" id="5AI-rC-kE9"/>
+                                            <outlet property="retweetedButton" destination="spR-Pf-mtz" id="FlT-Df-CGK"/>
                                             <outlet property="tweetText" destination="D5w-7U-1ih" id="6th-Wn-Rio"/>
                                             <outlet property="userName" destination="Ycp-zc-QNZ" id="iTt-fX-Fvf"/>
                                         </connections>
@@ -285,6 +302,8 @@
         <image name="TwitterLogoBlue" width="200" height="200"/>
         <image name="close-icon" width="26" height="24"/>
         <image name="edit-icon" width="30" height="27"/>
+        <image name="favor-icon" width="30" height="30"/>
+        <image name="retweet-icon" width="30" height="30"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

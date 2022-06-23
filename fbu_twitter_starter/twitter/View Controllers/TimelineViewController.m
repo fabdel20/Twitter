@@ -104,6 +104,22 @@
     cell.profilePic.image = nil;
     [cell.profilePic setImageWithURL:url];
     
+    if(tweetI.favorited){
+        cell.favButton = nil;
+        [cell.favButton setImage:[UIImage imageNamed:@"favor-icon-red"] forState:UIControlStateNormal];
+    }else{
+        [cell.favButton setImage:[UIImage imageNamed:@"favor-icon"]
+        forState:UIControlStateNormal];
+    }
+    
+    if(tweetI.retweeted){
+        cell.retweetedButton = nil;
+        [cell.retweetedButton setImage:[UIImage
+        imageNamed:@"retweet-icon-green"] forState:UIControlStateNormal];
+    }else{
+        [cell.retweetedButton setImage:[UIImage imageNamed:@"retweet-icon"]
+        forState:UIControlStateNormal];
+    }
     return cell;
 }
 
