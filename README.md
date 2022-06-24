@@ -40,6 +40,7 @@ Here's a walkthrough of implemented user stories:
 <img src='https://user-images.githubusercontent.com/81253198/175697540-71554101-7beb-4a0d-9401-8855c5dda92a.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
+
 GIF created with [Kap](https://getkap.co/).
 
 ## Notes
