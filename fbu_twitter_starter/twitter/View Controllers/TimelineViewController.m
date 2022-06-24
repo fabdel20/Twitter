@@ -15,7 +15,7 @@
 #import "User.h"
 #import "UIImageView+AFNetworking.h"
 #import "ComposeViewController.h"
-
+#import "Tweet Details View.h"
 @interface TimelineViewController () <ComposeViewControllerDelegate,UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 - (IBAction)didTapLogout:(id)sender;
 @property (weak, nonatomic) IBOutlet UITableView *TableView;
@@ -63,10 +63,19 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    UINavigationController *navigationController = [segue destinationViewController];
-    ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
-    composeController.delegate = self;
-    
+    if([[segue identifier] isEqualToString:@"composeSegue"]){
+        UINavigationController *navigationController = [segue destinationViewController];
+        ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
+        composeController.delegate = self;
+    }
+    if([[segue identifier] isEqualToString:@"detailsSegue"]){
+        UINavigationController *navController = [segue destinationViewController];
+        Tweet_Details_View *tweetDeetsController = (Tweet_Details_View*)navController.topViewController;
+        UITableViewCell *tappedCell = sender;
+        NSIndexPath *indexPath = [self.TableView indexPathForCell:tappedCell];
+        Tweet *tweet = self.arrayOfTweets[indexPath.row];
+        tweetDeetsController.tweet = tweet;
+    }
 }
 - (void)didTweet:(Tweet *)tweet {
  [self.arrayOfTweets insertObject:tweet atIndex:0];

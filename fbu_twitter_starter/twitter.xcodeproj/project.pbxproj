@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		010F41C52865797C006D101E /* Tweet Details View.m in Sources */ = {isa = PBXBuildFile; fileRef = 010F41C42865797C006D101E /* Tweet Details View.m */; };
 		019B720828613C2F00031BCF /* Keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 019B720728613C2F00031BCF /* Keys.plist */; };
 		019B720B2861553400031BCF /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 019B720A2861553400031BCF /* User.m */; };
 		019B720E2861736400031BCF /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 019B720D2861736400031BCF /* Tweet.m */; };
@@ -25,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		010F41C32865797C006D101E /* Tweet Details View.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tweet Details View.h"; sourceTree = "<group>"; };
+		010F41C42865797C006D101E /* Tweet Details View.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Tweet Details View.m"; sourceTree = "<group>"; };
 		019B720728613C2F00031BCF /* Keys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Keys.plist; sourceTree = "<group>"; };
 		019B72092861553400031BCF /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		019B720A2861553400031BCF /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
@@ -146,6 +149,8 @@
 			children = (
 				6AD2790420BCC0380085BC29 /* LoginViewController.h */,
 				6AD2790520BCC0380085BC29 /* LoginViewController.m */,
+				010F41C42865797C006D101E /* Tweet Details View.m */,
+				010F41C32865797C006D101E /* Tweet Details View.h */,
 				6AD2790720BCC04D0085BC29 /* TimelineViewController.h */,
 				6AD2790820BCC04D0085BC29 /* TimelineViewController.m */,
 				019B721328637D4600031BCF /* TweetCellTableViewCell.h */,
@@ -266,6 +271,7 @@
 				019B720E2861736400031BCF /* Tweet.m in Sources */,
 				6AD2790620BCC0380085BC29 /* LoginViewController.m in Sources */,
 				6AD278DA20BC4B950085BC29 /* AppDelegate.m in Sources */,
+				010F41C52865797C006D101E /* Tweet Details View.m in Sources */,
 				6AD278F620BCB68B0085BC29 /* APIManager.m in Sources */,
 				6AD2790920BCC04D0085BC29 /* TimelineViewController.m in Sources */,
 			);
