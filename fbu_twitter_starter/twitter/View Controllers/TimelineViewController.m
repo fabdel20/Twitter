@@ -16,6 +16,8 @@
 #import "UIImageView+AFNetworking.h"
 #import "ComposeViewController.h"
 #import "Tweet Details View.h"
+#import "DateTools.h"
+
 @interface TimelineViewController () <ComposeViewControllerDelegate,UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 - (IBAction)didTapLogout:(id)sender;
 @property (weak, nonatomic) IBOutlet UITableView *TableView;
@@ -105,6 +107,8 @@
     cell.userName.text = tweetI.user.screenName;
     cell.retweet.text = [NSString stringWithFormat: @"%d", tweetI.retweetCount];
     cell.likes.text = [NSString stringWithFormat: @"%d", tweetI.favoriteCount];
+    cell.date.text = [tweetI.timeSince shortTimeAgoSinceNow];
+    cell.tweetI = tweetI;
     
     NSString *URLString = tweetI.user.profilePicture;
     NSURL *url = [NSURL URLWithString:URLString];
@@ -113,22 +117,6 @@
     cell.profilePic.image = nil;
     [cell.profilePic setImageWithURL:url];
     
-    if(tweetI.favorited){
-        cell.favButton = nil;
-        [cell.favButton setImage:[UIImage imageNamed:@"favor-icon-red"] forState:UIControlStateNormal];
-    }else{
-        [cell.favButton setImage:[UIImage imageNamed:@"favor-icon"]
-        forState:UIControlStateNormal];
-    }
-    
-    if(tweetI.retweeted){
-        cell.retweetedButton = nil;
-        [cell.retweetedButton setImage:[UIImage
-        imageNamed:@"retweet-icon-green"] forState:UIControlStateNormal];
-    }else{
-        [cell.retweetedButton setImage:[UIImage imageNamed:@"retweet-icon"]
-        forState:UIControlStateNormal];
-    }
     return cell;
 }
 
