@@ -33,6 +33,7 @@
     [self.TableView insertSubview:refreshControl atIndex:0];
     self.TableView.dataSource = self;
     self.TableView.delegate = self;
+    self.TableView.rowHeight = UITableViewAutomaticDimension;
     
     // Get timeline
     [[APIManager shared] getHomeTimelineWithCompletion:^(NSArray *tweets, NSError *error) {
@@ -104,7 +105,6 @@
     cell.userName.text = tweetI.user.screenName;
     cell.retweet.text = [NSString stringWithFormat: @"%d", tweetI.retweetCount];
     cell.likes.text = [NSString stringWithFormat: @"%d", tweetI.favoriteCount];
-    cell.reply.text = [NSString stringWithFormat: @"%@", tweetI.retweetedByUser];
     
     NSString *URLString = tweetI.user.profilePicture;
     NSURL *url = [NSURL URLWithString:URLString];

@@ -25,10 +25,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    //self.tweetTedxt.text = tweet.text;
-    //self.userN.text = tweet.user.screenName;
-    //self.authorN.text = tweet.user.name;
+    self.tweetTedxt.text = _tweet.text;
+    self.userN.text = _tweet.user.screenName;
+    self.authorN.text = _tweet.user.name;
     
+    NSString *URLString = _tweet.user.profilePicture;
+    NSURL *url = [NSURL URLWithString:URLString];
+    //NSData *urlData = [NSData dataWithContentsOfURL:url];
+    
+    self.profPic.image = nil;
+    [self.profPic setImageWithURL:url];
 }
 - (IBAction)closeButton:(id)sender {
     [self dismissViewControllerAnimated:true completion:nil];
